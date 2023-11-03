@@ -1,0 +1,35 @@
+@{
+    DateTime fechaInicio = DateTime.Now;
+    DateTime fechaFin = new DateTime(2023, 12, 31);
+
+    TimeSpan tiempoRestante = fechaFin - fechaInicio;
+
+    string cuentaRegresiva = string.Format("{0} días, {1} horas, {2} minutos, {3} segundos",
+        tiempoRestante.Days, tiempoRestante.Hours, tiempoRestante.Minutes, tiempoRestante.Seconds);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cuenta Regresiva</title>
+    <link rel="stylesheet" href="~/css/styles.css"/>
+</head>
+<body>
+    <h1>Cuenta Regresiva</h1>
+
+    <div class="container">
+        <div class="item-right">
+            <h2>Start Time</h2>
+            <h3>@fechaInicio</h3>
+        </div>
+        <div class="item-left">
+            <h2>End Time</h2>
+            <h3>@fechaFin</h3>
+        </div>
+    </div>
+
+    <h2>Time Remaining</h2>
+    <p>@cuentaRegresiva</p>
+    <h2>Remaining</h2>
+</body>
+</html>
